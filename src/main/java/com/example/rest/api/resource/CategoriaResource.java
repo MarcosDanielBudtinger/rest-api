@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.example.rest.api.model.Categoria;
 import com.example.rest.api.repository.CategoriaRepository;
 
@@ -45,8 +44,9 @@ public class CategoriaResource {
 	}
 	
 	@GetMapping("/{codigo}")
-	public Optional<Categoria> buscarCategoriaPeloCodigo(@PathVariable Long codigo) {
-		return categoriaRepository.findById(codigo);
+	public ResponseEntity<Categoria> buscarPeloCodigo(@PathVariable Long codigo) {
+		 Categoria categoria = categoriaRepository.findByCodigo(codigo);
+		 return categoria != null ? ResponseEntity.ok(categoria) : ResponseEntity.notFound().build();
 	}
 	
 	
