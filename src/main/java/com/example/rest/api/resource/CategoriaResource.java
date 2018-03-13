@@ -49,5 +49,4 @@ public class CategoriaResource {
 		return categoriaRepository.findById(codigo);
 	}
 	
-	
 }
