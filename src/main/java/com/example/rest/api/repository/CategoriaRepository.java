@@ -6,4 +6,5 @@ import com.example.rest.api.model.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
+	
 }

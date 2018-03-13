@@ -48,4 +48,6 @@ public class CategoriaResource {
 	public Optional<Categoria> buscarCategoriaPeloCodigo(@PathVariable Long codigo) {
 		return categoriaRepository.findById(codigo);
 	}
+	
+	
 }
